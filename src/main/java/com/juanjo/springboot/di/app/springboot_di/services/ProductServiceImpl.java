@@ -22,8 +22,12 @@ import com.juanjo.springboot.di.app.springboot_di.repositories.ProductRepository
 @Service
 public class ProductServiceImpl implements ProductService {
     // Inyecta el repositorio de productos
-    @Autowired
     private ProductRepository repository;
+
+    @Autowired
+    public void setRepository(ProductRepository repository) {
+        this.repository = repository;
+    }
 
     /**
      * Método para obtener todos los productos.
