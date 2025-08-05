@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.juanjo.springboot.di.app.springboot_di.models.Product;
 import com.juanjo.springboot.di.app.springboot_di.repositories.ProductRepository;
@@ -19,7 +19,7 @@ import com.juanjo.springboot.di.app.springboot_di.repositories.ProductRepository
  * datos
  * de productos.
  */
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
     // Inyecta el repositorio de productos
     @Autowired
