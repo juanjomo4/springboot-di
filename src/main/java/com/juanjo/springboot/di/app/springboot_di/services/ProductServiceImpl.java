@@ -3,18 +3,27 @@ package com.juanjo.springboot.di.app.springboot_di.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.juanjo.springboot.di.app.springboot_di.models.Product;
-import com.juanjo.springboot.di.app.springboot_di.repositories.ProductRepositoryImpl;
+import com.juanjo.springboot.di.app.springboot_di.repositories.ProductRepository;
 
 /**
- * Servicio para manejar la lógica de negocio relacionada con productos.
- * Este servicio interactúa con el repositorio para obtener datos de productos.
+ * Maneja la lógica de negocio relacionada con productos.
+ * Interactúa con el repositorio para obtener datos de productos.
  * Puedes añadir lógica adicional aquí, como validaciones o transformaciones de
  * datos.
  * Por ejemplo, aplicar un IVA a los precios de los productos.
+ * Esta implementación utiliza un repositorio específico para acceder a los
+ * datos
+ * de productos.
  */
+@Component
 public class ProductServiceImpl implements ProductService {
-    private ProductRepositoryImpl repository = new ProductRepositoryImpl();
+    // Inyecta el repositorio de productos
+    @Autowired
+    private ProductRepository repository;
 
     /**
      * Método para obtener todos los productos.

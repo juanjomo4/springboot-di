@@ -3,6 +3,8 @@ package com.juanjo.springboot.di.app.springboot_di.repositories;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.juanjo.springboot.di.app.springboot_di.models.Product;
 
 /**
@@ -11,6 +13,7 @@ import com.juanjo.springboot.di.app.springboot_di.models.Product;
  * Puedes reemplazarlo por una implementación real que use JPA, JDBC, etc.
  * Buscar, actualizar y eliminar productos.
  */
+@Component
 public class ProductRepositoryImpl implements ProductRepository {
 
     private List<Product> data;
