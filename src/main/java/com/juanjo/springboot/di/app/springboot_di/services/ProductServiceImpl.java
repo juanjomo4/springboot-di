@@ -3,7 +3,6 @@ package com.juanjo.springboot.di.app.springboot_di.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.juanjo.springboot.di.app.springboot_di.models.Product;
@@ -24,8 +23,7 @@ public class ProductServiceImpl implements ProductService {
     // Inyecta el repositorio de productos
     private ProductRepository repository;
 
-    @Autowired
-    public void setRepository(ProductRepository repository) {
+    public ProductServiceImpl(ProductRepository repository) {
         this.repository = repository;
     }
 
