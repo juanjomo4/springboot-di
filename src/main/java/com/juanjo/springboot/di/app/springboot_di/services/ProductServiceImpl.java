@@ -3,8 +3,10 @@ package com.juanjo.springboot.di.app.springboot_di.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import com.juanjo.springboot.di.app.springboot_di.models.Product;
@@ -27,6 +29,12 @@ public class ProductServiceImpl implements ProductService {
     // Especifica el repositorio a utilizar
     // @Qualifier("productRepositoryImpl")
     private ProductRepository repository;
+    
+    // Inyecta el entorno para acceder a propiedades de configuración
+    // Esto permite acceder a propiedades definidas en application.properties
+    // Se puede inyectar también por constructor
+    @Autowired
+    private Environment environment;
 
     /**
      * Constructor que inyecta el repositorio de productos.
@@ -48,7 +56,7 @@ public class ProductServiceImpl implements ProductService {
             // Aquí podrías aplicar alguna lógica adicional si es necesario
             // Por ejemplo, formatear el precio o añadir información adicional
             // Aplicación de IVA del 21%
-            Double priceImp = product.getPrice() * 1.21d;
+            Double priceImp = product.getPrice() * environment.getProperty("config.price.iva", Double.class);
 
             // De esta forma, no se pierde el principio de inmutabilidad del objeto
 
