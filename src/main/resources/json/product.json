@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Memoria RAM",
+    "price": 78
+  },
+  {
+    "id": 2,
+    "name": "Procesador",
+    "price": 248
+  },
+  {
+    "id": 3,
+    "name": "Placa Base",
+    "price": 162
+  },
+  {
+    "id": 4,
+    "name": "Tarjeta Gráfica",
+    "price": 657
+  },
+  {
+    "id": 5,
+    "name": "Disco Duro",
+    "price": 120
+  },
+  {
+    "id": 6,
+    "name": "Fuente de Alimentación",
+    "price": 85
+  },
+  {
+    "id": 7,
+    "name": "Caja",
+    "price": 65
+  }
+]

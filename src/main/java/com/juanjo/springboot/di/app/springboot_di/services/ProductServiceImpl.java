@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+// import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +41,8 @@ public class ProductServiceImpl implements ProductService {
      *
      * @param repository Repositorio de productos a utilizar.
      */
-    public ProductServiceImpl(@Qualifier("productRepositoryImpl") ProductRepository repository) {
+    // public ProductServiceImpl(@Qualifier("productRepositoryImpl") ProductRepository repository) {
+    public ProductServiceImpl(ProductRepository repository) {
         this.repository = repository;
     }
 
